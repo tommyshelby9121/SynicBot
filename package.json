@@ -1,0 +1,24 @@
+{
+  "name": "@synicbot/synic",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tommyshelby9121/SynicBot.git"
+  },
+  "keywords": [
+    "typescript",
+    "nodejs",
+    "discordjs"
+  ],
+  "author": "Sycrixx",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/tommyshelby9121/SynicBot/issues"
+  },
+  "homepage": "https://github.com/tommyshelby9121/SynicBot#readme"
+}
