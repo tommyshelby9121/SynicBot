@@ -9,5 +9,7 @@ module.exports = async (client:SynicClient, guildData:Guild) => {
         if (err) return console.error(err);
     });
 
-    data.remove();
+    if (data) {
+        data.remove();
+    }
 }
