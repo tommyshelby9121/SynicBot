@@ -1,6 +1,7 @@
 import { model, Schema, Document } from "mongoose";
 
 export interface IGuildInfo extends Document {
+    guildId: string,
     guildName: string,
     memberCount: string,
     region: string,
@@ -12,6 +13,11 @@ export interface IGuildInfo extends Document {
 }
 
 const GuildInfoSchema = new Schema({
+    guildId: {
+        type: String,
+        required: true,
+        unique: true,
+    },
     guildName: {
         type: String,
         required: true,
