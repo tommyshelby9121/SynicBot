@@ -19,5 +19,13 @@ for (const file of eventFiles) {
     console.log(`${file} event loaded!`);
 }
 
+// Command Handler
+const commandFiles = readdirSync(join(__dirname, "commands")).filter(file => file.endsWith(".js"));
+for (const file of commandFiles) {
+    const command = require(`./commands/${file}`);
+    client.commands.set(command.default.name, command.default);
+    console.log(`${file} command loaded!`);
+}
+
 // Login Synic
 client.login(client.config.token).catch(err => console.error(err));
