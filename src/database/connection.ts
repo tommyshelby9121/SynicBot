@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/explicit-module-boundary-types, @typescript-eslint/no-non-null-assertion */
+
 import { connect, connection } from "mongoose";
 
 const connectDB = async () => {

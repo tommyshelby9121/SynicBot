@@ -9,6 +9,7 @@ export default {
      * @param {SynicClient} client
      * @param {Message} message
      */
+    // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
     async execute(client:SynicClient, message:Message) {
         const msg = await message.channel.send("Pinging... 🏓");
         await msg.edit(`**Pong!** 🏓\nBot Latency: \`${msg.createdTimestamp - message.createdTimestamp}ms\` \nGateway Latency: \`${client.ws.ping}ms\``);
