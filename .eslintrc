@@ -7,7 +7,7 @@
     "jest": false
   },
   "parserOptions": {
-    "projet": "./tsconfig.json",
+    "project": "./tsconfig.json",
     "ecmaFeatures": {
       "globalReturn": false,
       "jsx": true
