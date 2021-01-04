@@ -7,6 +7,7 @@ type SynicConfig = {
 
 export class SynicClient extends Client {
     commands = new Collection<any, any>();
+    events = new Collection<any, any>();
     config: SynicConfig;
 
     constructor(config: SynicConfig) {
