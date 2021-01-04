@@ -21,37 +21,22 @@ const GuildInfoSchema = new Schema({
     guildName: {
         type: String,
         required: true,
-        unique: true,
     },
     memberCount: {
         type: String,
         required: true,
-        unique: true,
     },
     region: {
         type: String,
         required: true,
-        unique: true,
     },
-    categories: {
+    channels: {
         type: Array,
         required: true,
-        unique: true,
-    },
-    textChannels: {
-        type: Array,
-        required: true,
-        unique: true,
-    },
-    voiceChannels: {
-        type: Array,
-        required: true,
-        unique: true,
     },
     roles: {
         type: Array,
         required: true,
-        unique: true,
     },
     prefix: {
         type: String,
