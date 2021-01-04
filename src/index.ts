@@ -4,10 +4,14 @@ config();
 import { readdirSync } from "fs";
 import { join } from "path";
 import { SynicClient } from "./struct/Client";
+import connectDB from "./database/connection";
 const client:SynicClient = new SynicClient({
     token: process.env.DISCORD_CLIENT_TOKEN!,
     prefix: process.env.DISCORD_CLIENT_PREFIX!,
 });
+
+// Init connectDB
+connectDB().catch(err => console.error(err));
 
 // Event Handler
 const eventFiles = readdirSync(join(__dirname, "events")).filter(file => file.endsWith(".js"));
