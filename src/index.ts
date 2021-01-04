@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-non-null-assertion, @typescript-eslint/no-var-requires */
 import { config } from "dotenv";
 config();
 import { readdirSync } from "fs";

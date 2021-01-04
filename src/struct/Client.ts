@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+
 import { Client, Collection } from "discord.js";
 
 type SynicConfig = {
