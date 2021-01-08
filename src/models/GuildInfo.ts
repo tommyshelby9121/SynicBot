@@ -3,13 +3,10 @@ import { model, Schema, Document } from "mongoose";
 export interface IGuildInfo extends Document {
     guildId: string,
     guildName: string,
-    memberCount: string,
+    memberCount: number,
     region: string,
-    // categories: string,
-    // textChannels: string,
-    // voiceChannels: string,
-    // roles: string,
     prefix: string,
+    cases: number,
 }
 
 const GuildInfoSchema = new Schema({
@@ -23,7 +20,7 @@ const GuildInfoSchema = new Schema({
         required: true,
     },
     memberCount: {
-        type: String,
+        type: Number,
         required: true,
     },
     region: {
@@ -41,6 +38,10 @@ const GuildInfoSchema = new Schema({
     prefix: {
         type: String,
         default: "!",
+    },
+    cases: {
+        type: Number,
+        required: false,
     }
 });
 
