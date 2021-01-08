@@ -29,7 +29,7 @@
     "date-and-time": "^0.14.2",
     "discord.js": "^12.5.1",
     "dotenv": "^8.2.0",
-    "mongoose": "^5.11.9"
+    "mongoose": "^5.11.11"
   },
   "devDependencies": {
     "@babel/core": "^7.12.10",
