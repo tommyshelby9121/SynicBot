@@ -5,8 +5,6 @@ export interface IGuildInfo extends Document {
     guildName: string,
     memberCount: number,
     region: string,
-    prefix: string,
-    cases: number,
 }
 
 const GuildInfoSchema = new Schema({
@@ -41,8 +39,8 @@ const GuildInfoSchema = new Schema({
     },
     cases: {
         type: Number,
-        required: false,
-    }
+        default: 0,
+    },
 });
 
 export default model<IGuildInfo>("GuildInfo", GuildInfoSchema);
