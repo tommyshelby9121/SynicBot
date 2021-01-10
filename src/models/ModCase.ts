@@ -42,4 +42,4 @@ const ModCaseSchema = new Schema({
     },
 });
 
-export default model<IModCase>("ModerationCase", ModCaseSchema);
+export default model<IModCase>("ModCase", ModCaseSchema);
