@@ -1,5 +1,4 @@
-module.exports = {
-  en: {
+export default {
     moderation: {
       no_user_permission: "You do not have permission to execute this command!",
       no_bot_permission: "I do not have permission to execute this command!",
@@ -10,5 +9,4 @@ module.exports = {
       },
       no_case_arg: "Please provide a case number!",
     }
-  }
 }
