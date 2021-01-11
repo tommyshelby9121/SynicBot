@@ -19,7 +19,7 @@ export default {
         if (!banUser) return simpleEmbed(message, responses.moderation.no_user_provided + "ban!", colors.error);
         if (banUser.id === message.author.id) return simpleEmbed(message, responses.moderation.ban.cannot_ban_self, colors.error);
         if (banUser.hasPermission("BAN_MEMBERS")) return simpleEmbed(message, responses.moderation.ban.could_not_ban_user, colors.error);
-        let banReason = args.join(" ").slice(22);
+        let banReason = args.join(" ").slice(banUser.id.length);
         if (!banReason) banReason = "No Reason Provided!";
 
         await GuildInfo.findOne({ guildId: message.guild?.id }, async (err:any, response:any) => {
@@ -43,6 +43,7 @@ export default {
             await GuildInfo.findOneAndUpdate({ guildId: message.guild?.id }, { cases: caseId });
 
             try {
+                await banUser.send(`You have been banned in ${message.guild?.name} for: ${banReason}`);
                 await banUser.ban({ reason: banReason });
                 return simpleEmbed(message, `${banUser.user.tag} has been banned!`, colors.success);
             }

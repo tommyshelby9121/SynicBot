@@ -19,7 +19,7 @@ export default {
         if (!kickUser) return simpleEmbed(message, responses.moderation.no_user_provided + "kick!", colors.error);
         if (kickUser.id === message.author.id) return simpleEmbed(message, responses.moderation.kick.cannot_kick_self, colors.error);
         if (kickUser.hasPermission("KICK_MEMBERS")) return simpleEmbed(message, responses.moderation.kick.could_not_kick_user, colors.error);
-        let kickReason = args.join(" ").slice(22);
+        let kickReason = args.join(" ").slice(kickUser.id.length);
         if (!kickReason) kickReason = "No Reason Provided!";
 
         await GuildInfo.findOne({ guildId: message.guild?.id }, async (err:any, response:any) => {
