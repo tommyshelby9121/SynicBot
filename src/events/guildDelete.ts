@@ -5,11 +5,11 @@ import { Guild } from "discord.js";
 import GuildInfo from "../models/GuildInfo";
 
 module.exports = async (client:SynicClient, guildData:Guild) => {
-    const data = GuildInfo.findOne({ guildId: guildData.id }, (err:any) => {
-        if (err) return console.error(err);
+    const deleteGuild = await GuildInfo.findOne({ guildId: guildData.id }, (err:any) => {
+       if (err) throw err;
     });
 
-    if (data) {
-        data.remove();
+    if (deleteGuild) {
+        deleteGuild.remove();
     }
 }

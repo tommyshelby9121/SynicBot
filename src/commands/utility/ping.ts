@@ -1,4 +1,4 @@
-import { SynicClient } from "../struct/Client";
+import { SynicClient } from "../../struct/Client";
 import { Message } from "discord.js";
 
 export default {
