@@ -1,4 +1,4 @@
-import { SynicClient } from "../struct/Client";
+import { SynicClient } from "../../struct/Client";
 import { Message, MessageEmbed } from "discord.js";
 
 export default {
