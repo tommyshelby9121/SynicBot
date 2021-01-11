@@ -35,7 +35,7 @@ export default {
                 guildId: message.guild?.id,
                 caseId,
                 staffMember: message.author,
-                victim: warnUser,
+                user: warnUser,
                 reason: warnReason,
                 method: "Warn",
                 date: formatDate(date, "MM/DD/YYYY HH:mm"),

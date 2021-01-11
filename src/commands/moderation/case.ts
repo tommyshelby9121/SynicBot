@@ -17,7 +17,7 @@ export default {
 
         await ModCase.findOne({ guildId: message.guild?.id, caseId: { $gte: parseInt(caseId) } }, async (err:any, response:any) => {
             if (err) return console.error(err);
-            return caseInfo(message, `Case ${response.caseId} | ${response.method}`, response.method, response.victim, response.staffMember, response.reason);
+            return caseInfo(message, `Case ${response.caseId} | ${response.method}`, response.method, response.user, response.staffMember, response.reason);
         });
     }
 }

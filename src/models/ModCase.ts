@@ -24,7 +24,7 @@ const ModCaseSchema = new Schema({
         type: String,
         required: true,
     },
-    victim: {
+    user: {
         type: String,
         required: true,
     },
