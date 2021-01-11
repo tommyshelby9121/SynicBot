@@ -1,12 +1,12 @@
-import { SynicClient } from "../struct/Client";
+import { SynicClient } from "../../struct/Client";
 import { Message } from "discord.js";
-import { noPermission, noUser, modActionCancelled, modActionSuccess } from "../utils/embedBuilder";
-import { formatDate } from "../utils/formatDate";
-const responses = require("../utils/responses");
+import { noPermission, noUser, modActionCancelled, modActionSuccess } from "../../utils/embedBuilder";
+import { formatDate } from "../../utils/formatDate";
+const responses = require("../../utils/responses");
 
 // Import Model
-import GuildInfo from "../models/GuildInfo";
-import ModerationCase from "../models/ModCase";
+import GuildInfo from "../../models/GuildInfo";
+import ModerationCase from "../../models/ModCase";
 
 export default {
     name: "warn",

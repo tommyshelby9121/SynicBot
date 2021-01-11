@@ -1,10 +1,10 @@
-import { SynicClient } from "../struct/Client";
+import { SynicClient } from "../../struct/Client";
 import { Message } from "discord.js";
-import {caseInfo, missingArgs, noPermission} from "../utils/embedBuilder";
-const response = require("../utils/responses");
+import {caseInfo, missingArgs, noPermission} from "../../utils/embedBuilder";
+const response = require("../../utils/responses");
 
 // Load Model
-import ModCase from "../models/ModCase";
+import ModCase from "../../models/ModCase";
 
 export default {
     name: "case",
