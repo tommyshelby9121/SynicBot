@@ -15,9 +15,11 @@ export default {
         const caseId = args[0];
         if (!caseId) return simpleEmbed(message, response.en.moderation.no_case_arg, colors.error);
 
-        await ModCase.findOne({ guildId: message.guild?.id, caseId: { $gte: parseInt(caseId) } }, async (err:any, response:any) => {
-            if (err) return console.error(err);
-            return caseInfo(message, `Case ${response.caseId} | ${response.method}`, response.method, response.user, response.staffMember, response.reason);
-        });
+        const foundCase = await ModCase
+            .where('guildId', message.guild?.id)
+            .where('caseId', parseInt(caseId));
+
+        if (foundCase === null || undefined || [] || "") return simpleEmbed(message, `\`Case ${parseInt(caseId)}\` does not exist`, colors.error);
+        return caseInfo(message, `Case ${foundCase[0].caseId} | ${foundCase[0].method}`, foundCase[0].method, foundCase[0].user, foundCase[0].staffMember, foundCase[0].reason);
     }
 }
