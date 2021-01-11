@@ -7,7 +7,7 @@ import { formatDate } from "../../utils/formatDate";
 
 // Load Models
 import GuildInfo from "../../models/GuildInfo";
-import ModerationCase from "../../models/ModCase";
+import ModCase from "../../models/ModCase";
 
 export default {
     name: "kick",
@@ -30,11 +30,11 @@ export default {
             ++caseId;
 
             const date = new Date();
-            await ModerationCase.create({
+            await ModCase.create({
                 guildId: message.guild?.id,
                 caseId,
-                staffMember: message.author,
-                user: kickUser,
+                staffMember: message.author.id,
+                user: kickUser.user.id,
                 reason: kickReason,
                 method: "Kick",
                 date: formatDate(date, "MM/DD/YYYY HH:mm"),

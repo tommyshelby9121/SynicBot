@@ -7,7 +7,7 @@ const responses = require("../../utils/responses");
 
 // Import Model
 import GuildInfo from "../../models/GuildInfo";
-import ModerationCase from "../../models/ModCase";
+import ModCase from "../../models/ModCase";
 
 export default {
     name: "warn",
@@ -31,11 +31,11 @@ export default {
             ++caseId;
 
             const date = new Date();
-            await ModerationCase.create({
+            await ModCase.create({
                 guildId: message.guild?.id,
                 caseId,
-                staffMember: message.author,
-                user: warnUser,
+                staffMember: message.author.id,
+                user: warnUser.user.id,
                 reason: warnReason,
                 method: "Warn",
                 date: formatDate(date, "MM/DD/YYYY HH:mm"),
