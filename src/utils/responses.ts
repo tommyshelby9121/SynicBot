@@ -1,4 +1,11 @@
 export default {
+    help: {
+        categories_embed: "Here are my command categories. To view the commands available in each category, do `?help <category name>`",
+        categories: [
+            "- utility",
+            "- moderation"
+        ]
+    },
     moderation: {
         no_user_permission: "You do not have permission to execute this command!",
         no_bot_permission: "I do not have permission to execute this command!",
@@ -15,6 +22,10 @@ export default {
         ban: {
             could_not_ban_user: "Could not ban user! Please remove all permissions from the user in order to kick them!",
             cannot_ban_self: "You cannot ban yourself!",
+        },
+        unban: {
+            cannot_unban_self: "You cannot unban yourself! If you were banned, you won't be able to use this command! 😉",
+            user_not_banned: "That user is not banned! Ban them first in order to unban them 😉"
         }
     }
 }
