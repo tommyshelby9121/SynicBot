@@ -48,7 +48,7 @@ export default {
             }
             catch (err) {
                 console.error(err);
-                return simpleEmbed(message, "Could not kick user. An error has occurred and the developer has been notified", colors.error);
+                return simpleEmbed(message, "Could not ban user. An error has occurred and the developer has been notified", colors.error);
             }
         });
     }
