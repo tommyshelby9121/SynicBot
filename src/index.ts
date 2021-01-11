@@ -24,12 +24,23 @@ for (const file of eventFiles) {
 }
 
 // Command Handler
-const commandFiles = readdirSync(join(__dirname, "commands")).filter(file => file.endsWith(".js"));
-for (const file of commandFiles) {
-    const command = require(`./commands/${file}`);
-    client.commands.set(command.default.name, command.default);
-    console.log(`${file} command loaded!`);
-}
+// const commandFiles = readdirSync(join(__dirname, "commands")).filter(file => file.endsWith(".js"));
+// for (const file of commandFiles) {
+//     const command = require(`./commands/${file}`);
+//     client.commands.set(command.default.name, command.default);
+//     console.log(`${file} command loaded!`);
+// }
+readdirSync(join(__dirname, "commands")).forEach(dir => {
+   const commandFiles = readdirSync(join(__dirname, `./commands/${dir}/`)).filter(file => file.endsWith(".js"));
+
+   for (const file of commandFiles) {
+       const command = require(`./commands/${dir}/${file}`);
+       if (command.default.name) {
+           client.commands.set(command.default.name, command.default);
+       }
+       console.log(`${file} command loaded!`);
+   }
+});
 
 // Login Synic
 client.login(client.config.token).catch(err => console.error(err));
